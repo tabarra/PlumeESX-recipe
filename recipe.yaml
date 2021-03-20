@@ -1,6 +1,6 @@
-$engine: 2
+$engine: 3
 name: PlumeESX
-version: v1.0.0
+version: 2.0.0
 author: Tabarra & Chip
 description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1-final base that can be easily extendable. 
 
@@ -8,15 +8,14 @@ tasks:
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
-    ref: 88f4f974b855e0bf2ca5f51b9916648bd5b7d44b
+    ref: f559e8bbb7a5c1ee8db1d26ed2cf7d29fa59e146
     subpath: resources
     dest: ./resources
   
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/tabarra/txAdmin-recipes
+    src: https://github.com/tabarra/PlumeESX-recipe
     ref: main
-    subpath: plume_esx
     dest: ./tmp/plume_esx
 
   - action: move_path
@@ -41,7 +40,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/async
-    ref: 12dd585b0b4965596487f12039ce6f0ab4de319a
+    ref: e7b778f0c7236132596e98d8ebd33e1127dbb4c4
     dest: ./resources/async
 
   - action: download_github
@@ -55,8 +54,13 @@ tasks:
     dest: ./resources/cron
 
   - action: download_github
+    src: https://github.com/esx-framework/instance
+    ref: 56295645638474a8780d3a2c2da356c28032ba3f
+    dest: ./resources/instance
+
+  - action: download_github
     src: https://github.com/esx-framework/skinchanger
-    ref: f79ad3fb01f4b29408d251d2b7a45dd9c6f3ba31
+    ref: d716177f226ad696d903a27d7afa3ca97ce80a3b
     dest: ./resources/skinchanger
 
   - action: download_github
@@ -66,17 +70,17 @@ tasks:
 
   - action: download_github
     src: https://github.com/dsheedes/cd_easytime
-    ref: 60b93883d921488039e6a0f6596568cc4afc67c3
+    ref: 50bb4ccb3ad3c1abe56c1a46aa7827fc250d6f1e
     dest: ./resources/cd_easytime
 
   - action: download_github
     src: https://github.com/Bob74/bob74_ipl
-    ref: 8b81571f069cafb4a739b19101a48574f9361575
+    ref: 4ae8aaefd38238e72ff8f36417decb05064cb924
     dest: ./resources/bob74_ipl
 
   - action: download_github
     src: https://github.com/ali-exacute/esx_adminplus
-    ref: 8894c8f0acbcd045f9ebe25031df663e544ce154
+    ref: 08dc5d7bdc95a031a718c38845afa10b239ec753
     dest: ./resources/esx_adminplus
 
   # Download ESX resources
@@ -107,27 +111,27 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_identity
-    ref: cade18e2de2f2084b2880031b3e8425d1433ad5f
+    ref: a74f91e7f90c3cc82da854637bb9b4611f52e810
     dest: ./resources/[esx]/esx_identity
 
   - action: download_github
     src: https://github.com/esx-framework/esx_skin
-    ref: fd64bebb474d6e353ac36508e90dd1677daa841b
+    ref: b98f29022a32548f2104585ee1a0c68f882a8248
     dest: ./resources/[esx]/esx_skin
 
   - action: download_github
     src: https://github.com/esx-framework/esx_status
-    ref: bce4abf4b507fa453a550fdbd25e2f3b2efe7064
+    ref: 3d526522fa78c37b5967005d19106eadd27695f1
     dest: ./resources/[esx]/esx_status
 
   - action: download_github
     src: https://github.com/esx-framework/esx_basicneeds
-    ref: 9a35c8f53fd2f9f2ca481fe9e9eba876c214db74
+    ref: dcde28674724f65864dbeb7abe2978981bf0b17c
     dest: ./resources/[esx]/esx_basicneeds
 
   - action: download_github
     src: https://github.com/esx-framework/esx_billing
-    ref: eb06fd169dce4e89c668410c10a5cefd06650aef
+    ref: 18df79337a5d35b945fa1ecfa2794e6bee3407aa
     dest: ./resources/[esx]/esx_billing
 
   - action: download_github
@@ -142,7 +146,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_society
-    ref: af56efc19cfbaa2541f9aaef46046d20ba6ec9bb
+    ref: b033466e14cfed43742117b11f1526b2e127e241
     dest: ./resources/[esx]/esx_society
 
   - action: download_github
@@ -152,7 +156,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_service
-    ref: 487a53693fda846e7a86ad8a3385dbe760ee8944
+    ref: 0c85c4e4b212015fbf97a4707ad59aa55904768d
     dest: ./resources/[esx]/esx_service
 
   - action: download_github
@@ -162,12 +166,12 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_vehicleshop
-    ref: 79e10361bb3607f152a2887b5b45ff998e840d52
+    ref: 48d1d8fbeb89c491c7796e16af20e5226e1cfa8b
     dest: ./resources/[esx]/esx_vehicleshop
 
   - action: download_github
     src: https://github.com/esx-framework/esx_jobs
-    ref: ae8e70044395be14d72d90e3301c45f6fb15ea27
+    ref: fb6bd5ef72cff371a7ff2b46526cbc5708b2c3ad
     dest: ./resources/[esx]/esx_jobs
 
   - action: download_github
@@ -177,28 +181,33 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_policejob
-    ref: 9ceb66a591bca41ab10786bc795ebf04e52e2877
+    ref: 22cdd4ef2d7808ae8109d1e9f65a336300f2cad2
     dest: ./resources/[esx]/esx_policejob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_ambulancejob
-    ref: e567948b9c78b0136bb08baeb8592d9e406ad2f3
+    ref: ba0961095c8a31f1d993c2c13f913dbb37bf52bf
     dest: ./resources/[esx]/esx_ambulancejob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_mechanicjob
-    ref: aa11285d5cb39a82926e5842ad89f0e890dab797
+    ref: d0e414fc96d3a07a68cafd57aaff954baa28bf99
     dest: ./resources/[esx]/esx_mechanicjob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_taxijob
-    ref: 1893ad065a53c144babe466bde74c9b1241ec663
+    ref: 0f69bfce0a8f587abcfc7e9567fffd3fa53e663c
     dest: ./resources/[esx]/esx_taxijob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_lscustom
-    ref: 011a548e7428c0be43223585c60eaf43ca5ee004
+    ref: b6f2f129ababf6ac3709145c814f52453d6b7ffa
     dest: ./resources/[esx]/esx_lscustom
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_atm
+    ref: e2d7eead18284052e5732856bf93a4b439764c61
+    dest: ./resources/[esx]/esx_atm 
 
   - action: download_github
     src: https://github.com/esx-framework/esx_shops
@@ -217,17 +226,17 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_barbershop
-    ref: 423cf1cecb59c05a60ad908cc3574665f455cc3f
+    ref: 25103f725db46a22ff8e12925290f2b71e9137cc
     dest: ./resources/[esx]/esx_barbershop
 
   - action: download_github
     src: https://github.com/esx-framework/esx_drugs
-    ref: 5b5a612f2580c8dea1d17029f9f25cf201575ef7
+    ref: 5d80d30de3d62122c1a8144fe0fc8635da14e6b0
     dest: ./resources/[esx]/esx_drugs
 
   - action: download_github
     src: https://github.com/esx-framework/esx_holdup
-    ref: 1f3779c265db5cd9039b91633d9d86b5293d8d4b
+    ref: ee9c916ebf955abefa3bfdbd20a773122b865a22
     dest: ./resources/[esx]/esx_holdup
 
   ## GCPhone stuff
