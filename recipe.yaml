@@ -2,7 +2,7 @@ $engine: 3
 name: PlumeESX
 version: 2.0.0
 author: Tabarra & Chip
-description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1-final base that can be easily extendable. 
+description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1-final base that can be easily extended. 
 
 tasks:
   # Download default CFX resources
