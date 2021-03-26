@@ -8,7 +8,7 @@ tasks:
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
-    ref: f559e8bbb7a5c1ee8db1d26ed2cf7d29fa59e146
+    ref: 0210252be7c17745fa30220e12c19e0d2f19af02
     subpath: resources
     dest: ./resources
   
@@ -22,6 +22,10 @@ tasks:
     src: ./tmp/plume_esx/server.cfg
     dest: ./server.cfg
   
+  - action: move_path
+    src: ./tmp/plume_esx/default_spawnpoint
+    dest: ./resources/default_spawnpoint
+
   - action: move_path
     src: ./tmp/plume_esx/loadingscreen
     dest: ./resources/loadingscreen
@@ -55,7 +59,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/instance
-    ref: 56295645638474a8780d3a2c2da356c28032ba3f
+    ref: 21cea1fee9f666ac3a30b9b03d6f8b5f21afb57d
     dest: ./resources/instance
 
   - action: download_github
@@ -211,7 +215,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_shops
-    ref: d8715d347c874905813446bfe2b810e63f19681b
+    ref: a085b5ba13f47acb754a0842908ae7cd60417763
     dest: ./resources/[esx]/esx_shops
 
   - action: download_github
