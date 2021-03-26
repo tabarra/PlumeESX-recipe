@@ -250,6 +250,12 @@ tasks:
     src: ./tmp/resources-1.2/gcphone
     dest: ./resources/gcphone
   
+  ##PMA-Voice
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: 6f3f52616746aebb4a13d313ef3bb7ced7818b5d
+    dest: ./resources/pma-voice
+
 
   ## KL HUD v2
   - action: download_github
