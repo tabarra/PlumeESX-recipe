@@ -256,6 +256,12 @@ tasks:
     ref: 6f3f52616746aebb4a13d313ef3bb7ced7818b5d
     dest: ./resources/pma-voice
 
+  - action: replace_string
+    file: ./resources/gcphone/config.lua
+    search: 'Config.UseMumbleVoIP = false'
+    replace: 'Config.UseMumbleVoIP = true'
+
+
 
   ## KL HUD v2
   - action: download_github
