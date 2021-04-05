@@ -1,6 +1,6 @@
 $engine: 3
 name: PlumeESX
-version: 2.0.0
+version: 2.1.0
 author: Tabarra & Chip
 description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1-final base that can be easily extended. 
 
@@ -71,11 +71,6 @@ tasks:
     src: https://github.com/HypeLevels/simpledrift
     ref: 77e378a2b59fcaca7624cb51575b2a3d39e3b635
     dest: ./resources/simpledrift
-
-  - action: download_github
-    src: https://github.com/dsheedes/cd_easytime
-    ref: 50bb4ccb3ad3c1abe56c1a46aa7827fc250d6f1e
-    dest: ./resources/cd_easytime
 
   - action: download_github
     src: https://github.com/Bob74/bob74_ipl
@@ -170,7 +165,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_vehicleshop
-    ref: 48d1d8fbeb89c491c7796e16af20e5226e1cfa8b
+    ref: 79e10361bb3607f152a2887b5b45ff998e840d52 # latest is bugged, ask taso
     dest: ./resources/[esx]/esx_vehicleshop
 
   - action: download_github
