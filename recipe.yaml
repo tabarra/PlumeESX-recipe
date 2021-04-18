@@ -110,7 +110,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_identity
-    ref: a74f91e7f90c3cc82da854637bb9b4611f52e810
+    ref: 1619a266071b3efaf432672daba0bb6690866b9a
     dest: ./resources/[esx]/esx_identity
 
   - action: download_github
@@ -165,7 +165,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_vehicleshop
-    ref: 79e10361bb3607f152a2887b5b45ff998e840d52 # latest is bugged, ask taso
+    ref: 34324bb83a86a1a3206881dba203b1433a16ac2f
     dest: ./resources/[esx]/esx_vehicleshop
 
   - action: download_github
@@ -260,6 +260,13 @@ tasks:
     file: ./resources/[esx]/esx_status/client/main.lua
     search: 'esx_status:onTick'
     replace: 'Kl_Hud:onTick'
+
+  ## pma-voice
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: 533feffa1f9be9592040fcf8b5233b11785af10a
+    dest: ./resources/pma-voice
+
 
 
   ## Final touches
