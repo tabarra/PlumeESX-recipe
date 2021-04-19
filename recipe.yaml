@@ -170,7 +170,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_jobs
-    ref: fb6bd5ef72cff371a7ff2b46526cbc5708b2c3ad
+    ref: f0dd6da73ae7d98e20f5a307f277668b69e70119
     dest: ./resources/[esx]/esx_jobs
 
   - action: download_github
