@@ -84,7 +84,7 @@ tasks:
 
   # Download ESX resources
   - action: download_github
-    src: https://github.com/esx-framework/es_extended
+    src: https://github.com/Mycroft-Studios/es_extended
     ref: legacy
     dest: ./resources/[esx]/es_extended
 
