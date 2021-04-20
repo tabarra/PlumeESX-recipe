@@ -238,6 +238,11 @@ tasks:
     ref: ee9c916ebf955abefa3bfdbd20a773122b865a22
     dest: ./resources/[esx]/esx_holdup
 
+  - action: download_github
+    src: https://github.com/esx-framework/esx_property
+    ref: 1475b201c01ff0cf9c4433e84da9444a10249312
+    dest: ./resources/esx_property
+
   ## GCPhone stuff
   - action: download_file
     url: https://github.com/Re-Ignited-Development/Re-Ignited-Phone/releases/download/V1.5/resources-1.2.zip
@@ -260,14 +265,6 @@ tasks:
     file: ./resources/[esx]/esx_status/client/main.lua
     search: 'esx_status:onTick'
     replace: 'Kl_Hud:onTick'
-
-  ## pma-voice
-  - action: download_github
-    src: https://github.com/AvarianKnight/pma-voice
-    ref: 533feffa1f9be9592040fcf8b5233b11785af10a
-    dest: ./resources/pma-voice
-
-
 
   ## Final touches
   - action: replace_string
