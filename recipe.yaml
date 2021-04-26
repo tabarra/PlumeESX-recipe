@@ -84,18 +84,18 @@ tasks:
 
   # Download ESX resources
   - action: download_github
-    src: https://github.com/Mycroft-Studios/es_extended
+    src: https://github.com/esx-framework/es_extended
     ref: legacy
     dest: ./resources/[esx]/es_extended
 
   - action: download_github
     src: https://github.com/esx-framework/esx_menu_default
-    ref: 2d46087ade9369c46df1d80b706dc13e6e4ac673
+    ref: c402e75d896737673fc662d2c2511a0888094f18
     dest: ./resources/[esx]/esx_menu_default
 
   - action: download_github
     src: https://github.com/esx-framework/esx_menu_dialog
-    ref: 1f53d642aa5867fd7762e1c98454d616e2a66f6a
+    ref: c022102901cc8057c5d7f93937a97604a97849ce
     dest: ./resources/[esx]/esx_menu_dialog
 
   - action: download_github
@@ -170,7 +170,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_jobs
-    ref: f0dd6da73ae7d98e20f5a307f277668b69e70119
+    ref: 7c03e61b935ea80295a4388f6a45c9e51abd1b59
     dest: ./resources/[esx]/esx_jobs
 
   - action: download_github
