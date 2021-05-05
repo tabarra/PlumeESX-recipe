@@ -39,7 +39,7 @@ tasks:
   # Download basic resources and ESX dependencies
   - action: download_github
     src: https://github.com/Blumlaut/EasyAdmin
-    ref: a32a906884651ca33f80e2718a66f9d2e49f92d3
+    ref: 08ed207d2bc583e6623d18b3105ab3ff323b0748
     dest: ./resources/EasyAdmin
 
   - action: download_github
