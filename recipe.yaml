@@ -21,10 +21,6 @@ tasks:
   - action: move_path
     src: ./tmp/plume_esx/server.cfg
     dest: ./server.cfg
-  
-  - action: move_path
-    src: ./tmp/plume_esx/default_spawnpoint
-    dest: ./resources/default_spawnpoint
 
   - action: move_path
     src: ./tmp/plume_esx/loadingscreen
@@ -39,48 +35,43 @@ tasks:
   # Download basic resources and ESX dependencies
   - action: download_github
     src: https://github.com/Blumlaut/EasyAdmin
-    ref: 4a2c04c44b4c4a3084a5641e82d61632faa8b913
+    ref: master
     dest: ./resources/EasyAdmin
 
   - action: download_github
     src: https://github.com/esx-framework/async
-    ref: e7b778f0c7236132596e98d8ebd33e1127dbb4c4
+    ref: master
     dest: ./resources/async
 
   - action: download_github
     src: https://github.com/brouznouf/fivem-mysql-async
-    ref: c5fa317a65acfe2eef453257e19e3b4fde137089
+    ref: master
     dest: ./resources/mysql-async
 
   - action: download_github
     src: https://github.com/esx-framework/cron
-    ref: 89914888d7dd801fb8430aeb386fd423e0f86f46
+    ref: master
     dest: ./resources/cron
 
   - action: download_github
     src: https://github.com/esx-framework/instance
-    ref: 21cea1fee9f666ac3a30b9b03d6f8b5f21afb57d
+    ref: master
     dest: ./resources/instance
 
   - action: download_github
     src: https://github.com/esx-framework/skinchanger
-    ref: d716177f226ad696d903a27d7afa3ca97ce80a3b
+    ref: master
     dest: ./resources/skinchanger
 
   - action: download_github
     src: https://github.com/HypeLevels/simpledrift
-    ref: 77e378a2b59fcaca7624cb51575b2a3d39e3b635
+    ref: main
     dest: ./resources/simpledrift
 
   - action: download_github
     src: https://github.com/Bob74/bob74_ipl
-    ref: 4ae8aaefd38238e72ff8f36417decb05064cb924
+    ref: master
     dest: ./resources/bob74_ipl
-
-  - action: download_github
-    src: https://github.com/ali-exacute/esx_adminplus
-    ref: 08dc5d7bdc95a031a718c38845afa10b239ec753
-    dest: ./resources/esx_adminplus
 
   # Download ESX resources
   - action: download_github
@@ -90,67 +81,67 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_menu_default
-    ref: c402e75d896737673fc662d2c2511a0888094f18
+    ref: master
     dest: ./resources/[esx]/esx_menu_default
 
   - action: download_github
     src: https://github.com/esx-framework/esx_menu_dialog
-    ref: c022102901cc8057c5d7f93937a97604a97849ce
+    ref:master
     dest: ./resources/[esx]/esx_menu_dialog
 
   - action: download_github
     src: https://github.com/esx-framework/esx_menu_list
-    ref: c4c88a9afd475074213d2586d09ac091c389c369
+    ref: master
     dest: ./resources/[esx]/esx_menu_list
 
   - action: download_github
     src: https://github.com/esx-framework/esx_datastore
-    ref: dfe0321bdd7ba35b6ec3316529c220b827816997
+    ref: master
     dest: ./resources/[esx]/esx_datastore
 
   - action: download_github
     src: https://github.com/esx-framework/esx_identity
-    ref: 1619a266071b3efaf432672daba0bb6690866b9a
+    ref: master
     dest: ./resources/[esx]/esx_identity
 
   - action: download_github
     src: https://github.com/esx-framework/esx_skin
-    ref: b98f29022a32548f2104585ee1a0c68f882a8248
+    ref: master
     dest: ./resources/[esx]/esx_skin
 
   - action: download_github
     src: https://github.com/esx-framework/esx_status
-    ref: 3d526522fa78c37b5967005d19106eadd27695f1
+    ref: master
     dest: ./resources/[esx]/esx_status
 
   - action: download_github
     src: https://github.com/esx-framework/esx_basicneeds
-    ref: dcde28674724f65864dbeb7abe2978981bf0b17c
+    ref: master
     dest: ./resources/[esx]/esx_basicneeds
 
   - action: download_github
     src: https://github.com/esx-framework/esx_billing
-    ref: 18df79337a5d35b945fa1ecfa2794e6bee3407aa
+    ref: master
     dest: ./resources/[esx]/esx_billing
 
   - action: download_github
     src: https://github.com/esx-framework/esx_addoninventory
-    ref: 5709570bc2cda27e08159536e3a6c9d1a3734915
+    ref: master
     dest: ./resources/[esx]/esx_addoninventory
 
   - action: download_github
     src: https://github.com/esx-framework/esx_addonaccount
-    ref: 3573919be24068283a3103a08414f64398381513
+    ref: master
     dest: ./resources/[esx]/esx_addonaccount
 
   - action: download_github
     src: https://github.com/esx-framework/esx_society
-    ref: b033466e14cfed43742117b11f1526b2e127e241
+    ref: master
     dest: ./resources/[esx]/esx_society
 
   - action: download_github
     src: https://github.com/esx-framework/esx_license
-    ref: 4a791b81827f17f7e31aeac1fb15f3c9c9ec6764
+    ref: master
     dest: ./resources/[esx]/esx_license
 
   - action: download_github
@@ -160,87 +151,87 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_garage
-    ref: 6ae703b18965452d148541c061f830469c8a8bd9
+     ref: master
     dest: ./resources/[esx]/esx_garage
 
   - action: download_github
     src: https://github.com/esx-framework/esx_vehicleshop
-    ref: 34324bb83a86a1a3206881dba203b1433a16ac2f
+    ref: master
     dest: ./resources/[esx]/esx_vehicleshop
 
   - action: download_github
     src: https://github.com/esx-framework/esx_jobs
-    ref: 7c03e61b935ea80295a4388f6a45c9e51abd1b59
+    ref: master
     dest: ./resources/[esx]/esx_jobs
 
   - action: download_github
     src: https://github.com/esx-framework/esx_joblisting
-    ref: bbce9722a24269e667d00cc26b7c6408f29cdfb7
+    ref: master
     dest: ./resources/[esx]/esx_joblisting
 
   - action: download_github
     src: https://github.com/esx-framework/esx_policejob
-    ref: 22cdd4ef2d7808ae8109d1e9f65a336300f2cad2
+    ref: master
     dest: ./resources/[esx]/esx_policejob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_ambulancejob
-    ref: ba0961095c8a31f1d993c2c13f913dbb37bf52bf
+    ref: master
     dest: ./resources/[esx]/esx_ambulancejob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_mechanicjob
-    ref: d0e414fc96d3a07a68cafd57aaff954baa28bf99
+    ref: master
     dest: ./resources/[esx]/esx_mechanicjob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_taxijob
-    ref: 0f69bfce0a8f587abcfc7e9567fffd3fa53e663c
+    ref: master
     dest: ./resources/[esx]/esx_taxijob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_lscustom
-    ref: b6f2f129ababf6ac3709145c814f52453d6b7ffa
+    ref: master  
     dest: ./resources/[esx]/esx_lscustom
 
   - action: download_github
     src: https://github.com/esx-framework/esx_atm
-    ref: e2d7eead18284052e5732856bf93a4b439764c61
+    ref: master
     dest: ./resources/[esx]/esx_atm 
 
   - action: download_github
     src: https://github.com/esx-framework/esx_shops
-    ref: a085b5ba13f47acb754a0842908ae7cd60417763
+    ref: master
     dest: ./resources/[esx]/esx_shops
 
   - action: download_github
     src: https://github.com/esx-framework/esx_weaponshop
-    ref: b42afd53e3f9876c357962a9d79d86dc6919fde0
+    ref: master
     dest: ./resources/[esx]/esx_weaponshop
 
   - action: download_github
     src: https://github.com/esx-framework/esx_clotheshop
-    ref: 04183ae7c0a9c1505b37a13bb4e2bbd195862511
+    ref: master
     dest: ./resources/[esx]/esx_clotheshop
 
   - action: download_github
     src: https://github.com/esx-framework/esx_barbershop
-    ref: 25103f725db46a22ff8e12925290f2b71e9137cc
+    ref: master
     dest: ./resources/[esx]/esx_barbershop
 
   - action: download_github
     src: https://github.com/esx-framework/esx_drugs
-    ref: 5d80d30de3d62122c1a8144fe0fc8635da14e6b0
+    ref: master
     dest: ./resources/[esx]/esx_drugs
 
   - action: download_github
     src: https://github.com/esx-framework/esx_holdup
-    ref: ee9c916ebf955abefa3bfdbd20a773122b865a22
+    ref: master
     dest: ./resources/[esx]/esx_holdup
 
   - action: download_github
     src: https://github.com/esx-framework/esx_property
-    ref: 1475b201c01ff0cf9c4433e84da9444a10249312
+    ref: master
     dest: ./resources/esx_property
 
   ## GCPhone stuff
