@@ -1,6 +1,6 @@
 $engine: 3
 name: PlumeESX
-version: 2.1.0
+version: 2.2.0
 author: Tabarra & Chip
 description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1-final base that can be easily extended. 
 
@@ -8,7 +8,7 @@ tasks:
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
-    ref: 0210252be7c17745fa30220e12c19e0d2f19af02
+    ref: 0169fdddaa9511558cfa17bcf80a832f56c359ff
     subpath: resources
     dest: ./resources
   
@@ -69,7 +69,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/HypeLevels/simpledrift
-    ref: 77e378a2b59fcaca7624cb51575b2a3d39e3b635
+    ref: 53b72cf605bd0ef82d71906245c3af0918187d13
     dest: ./resources/simpledrift
 
   - action: download_github
@@ -85,7 +85,7 @@ tasks:
   # Download ESX resources
   - action: download_github
     src: https://github.com/esx-framework/es_extended
-    ref: legacy
+    ref: 694cd6757802c432bd025f8251dee33760080eff
     dest: ./resources/[esx]/es_extended
 
   - action: download_github
