@@ -1,8 +1,8 @@
 $engine: 3
-name: PlumeESX
-version: 2.2.0
+name: PlumeESXLegacy
+version: 3.0.0
 author: Tabarra & Chip
-description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1-final base that can be easily extended. 
+description: A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. 
 
 tasks:
   # Download default CFX resources
@@ -21,10 +21,6 @@ tasks:
   - action: move_path
     src: ./tmp/plume_esx/server.cfg
     dest: ./server.cfg
-  
-  - action: move_path
-    src: ./tmp/plume_esx/default_spawnpoint
-    dest: ./resources/default_spawnpoint
 
   - action: move_path
     src: ./tmp/plume_esx/loadingscreen
@@ -33,8 +29,6 @@ tasks:
   - action: connect_database
   - action: query_database
     file: ./tmp/plume_esx/plume.sql
-  - action: query_database
-    file: ./tmp/plume_esx/gcphone.sql
 
   # Download basic resources and ESX dependencies
   - action: download_github
@@ -43,29 +37,10 @@ tasks:
     dest: ./resources/EasyAdmin
 
   - action: download_github
-    src: https://github.com/esx-framework/async
-    ref: e7b778f0c7236132596e98d8ebd33e1127dbb4c4
-    dest: ./resources/async
+    src: https://github.com/esx-framework/esx-legacy
+    ref: d48f493e540b2909515a9603e4b569e7fe137f4d
+    dest: ./resources/
 
-  - action: download_github
-    src: https://github.com/brouznouf/fivem-mysql-async
-    ref: c5fa317a65acfe2eef453257e19e3b4fde137089
-    dest: ./resources/mysql-async
-
-  - action: download_github
-    src: https://github.com/esx-framework/cron
-    ref: 89914888d7dd801fb8430aeb386fd423e0f86f46
-    dest: ./resources/cron
-
-  - action: download_github
-    src: https://github.com/esx-framework/instance
-    ref: 21cea1fee9f666ac3a30b9b03d6f8b5f21afb57d
-    dest: ./resources/instance
-
-  - action: download_github
-    src: https://github.com/esx-framework/skinchanger
-    ref: d716177f226ad696d903a27d7afa3ca97ce80a3b
-    dest: ./resources/skinchanger
 
   - action: download_github
     src: https://github.com/HypeLevels/simpledrift
@@ -76,178 +51,6 @@ tasks:
     src: https://github.com/Bob74/bob74_ipl
     ref: 4ae8aaefd38238e72ff8f36417decb05064cb924
     dest: ./resources/bob74_ipl
-
-  - action: download_github
-    src: https://github.com/ali-exacute/esx_adminplus
-    ref: 08dc5d7bdc95a031a718c38845afa10b239ec753
-    dest: ./resources/esx_adminplus
-
-  # Download ESX resources
-  - action: download_github
-    src: https://github.com/esx-framework/es_extended
-    ref: 694cd6757802c432bd025f8251dee33760080eff
-    dest: ./resources/[esx]/es_extended
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_menu_default
-    ref: 2d46087ade9369c46df1d80b706dc13e6e4ac673
-    dest: ./resources/[esx]/esx_menu_default
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_menu_dialog
-    ref: 1f53d642aa5867fd7762e1c98454d616e2a66f6a
-    dest: ./resources/[esx]/esx_menu_dialog
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_menu_list
-    ref: c4c88a9afd475074213d2586d09ac091c389c369
-    dest: ./resources/[esx]/esx_menu_list
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_datastore
-    ref: dfe0321bdd7ba35b6ec3316529c220b827816997
-    dest: ./resources/[esx]/esx_datastore
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_identity
-    ref: a74f91e7f90c3cc82da854637bb9b4611f52e810
-    dest: ./resources/[esx]/esx_identity
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_skin
-    ref: b98f29022a32548f2104585ee1a0c68f882a8248
-    dest: ./resources/[esx]/esx_skin
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_status
-    ref: 3d526522fa78c37b5967005d19106eadd27695f1
-    dest: ./resources/[esx]/esx_status
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_basicneeds
-    ref: dcde28674724f65864dbeb7abe2978981bf0b17c
-    dest: ./resources/[esx]/esx_basicneeds
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_billing
-    ref: 18df79337a5d35b945fa1ecfa2794e6bee3407aa
-    dest: ./resources/[esx]/esx_billing
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_addoninventory
-    ref: 5709570bc2cda27e08159536e3a6c9d1a3734915
-    dest: ./resources/[esx]/esx_addoninventory
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_addonaccount
-    ref: 3573919be24068283a3103a08414f64398381513
-    dest: ./resources/[esx]/esx_addonaccount
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_society
-    ref: b033466e14cfed43742117b11f1526b2e127e241
-    dest: ./resources/[esx]/esx_society
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_license
-    ref: 4a791b81827f17f7e31aeac1fb15f3c9c9ec6764
-    dest: ./resources/[esx]/esx_license
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_service
-    ref: 0c85c4e4b212015fbf97a4707ad59aa55904768d
-    dest: ./resources/[esx]/esx_service
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_garage
-    ref: 6ae703b18965452d148541c061f830469c8a8bd9
-    dest: ./resources/[esx]/esx_garage
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_vehicleshop
-    ref: 79e10361bb3607f152a2887b5b45ff998e840d52 # latest is bugged, ask taso
-    dest: ./resources/[esx]/esx_vehicleshop
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_jobs
-    ref: fb6bd5ef72cff371a7ff2b46526cbc5708b2c3ad
-    dest: ./resources/[esx]/esx_jobs
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_joblisting
-    ref: bbce9722a24269e667d00cc26b7c6408f29cdfb7
-    dest: ./resources/[esx]/esx_joblisting
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_policejob
-    ref: 22cdd4ef2d7808ae8109d1e9f65a336300f2cad2
-    dest: ./resources/[esx]/esx_policejob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_ambulancejob
-    ref: ba0961095c8a31f1d993c2c13f913dbb37bf52bf
-    dest: ./resources/[esx]/esx_ambulancejob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_mechanicjob
-    ref: d0e414fc96d3a07a68cafd57aaff954baa28bf99
-    dest: ./resources/[esx]/esx_mechanicjob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_taxijob
-    ref: 0f69bfce0a8f587abcfc7e9567fffd3fa53e663c
-    dest: ./resources/[esx]/esx_taxijob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_lscustom
-    ref: b6f2f129ababf6ac3709145c814f52453d6b7ffa
-    dest: ./resources/[esx]/esx_lscustom
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_atm
-    ref: e2d7eead18284052e5732856bf93a4b439764c61
-    dest: ./resources/[esx]/esx_atm 
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_shops
-    ref: a085b5ba13f47acb754a0842908ae7cd60417763
-    dest: ./resources/[esx]/esx_shops
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_weaponshop
-    ref: b42afd53e3f9876c357962a9d79d86dc6919fde0
-    dest: ./resources/[esx]/esx_weaponshop
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_clotheshop
-    ref: 04183ae7c0a9c1505b37a13bb4e2bbd195862511
-    dest: ./resources/[esx]/esx_clotheshop
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_barbershop
-    ref: 25103f725db46a22ff8e12925290f2b71e9137cc
-    dest: ./resources/[esx]/esx_barbershop
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_drugs
-    ref: 5d80d30de3d62122c1a8144fe0fc8635da14e6b0
-    dest: ./resources/[esx]/esx_drugs
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_holdup
-    ref: ee9c916ebf955abefa3bfdbd20a773122b865a22
-    dest: ./resources/[esx]/esx_holdup
-
-  ## GCPhone stuff
-  - action: download_file
-    url: https://github.com/Re-Ignited-Development/Re-Ignited-Phone/releases/download/V1.5/resources-1.2.zip
-    path: ./tmp/gcphone.zip
-  - action: unzip
-    src: ./tmp/gcphone.zip
-    dest: ./tmp
-  - action: move_path
-    src: ./tmp/resources-1.2/gcphone
-    dest: ./resources/gcphone
   
 
   ## KL HUD v2
@@ -269,3 +72,11 @@ tasks:
     
   - action: remove_path
     path: ./tmp
+
+  - action: remove_path
+    path: ./resources/esx_example
+
+  - action: remove_path
+    path: ./resources/server.cfg
+
+
