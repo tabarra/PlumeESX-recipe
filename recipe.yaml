@@ -30,6 +30,9 @@ tasks:
   - action: query_database
     file: ./tmp/plume_esx/plume.sql
 
+  - action: query_database
+    file: ./tmp/plume_esx/gcphone.sql
+
   # Download basic resources and ESX dependencies
 
   - action: download_github
