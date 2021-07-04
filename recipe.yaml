@@ -14,7 +14,7 @@ tasks:
   
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/hamy-os/PlumeESX-recipe
+    src: https://github.com/tabarra/PlumeESX-recipe
     ref: main
     dest: ./tmp/plume_esx
 
