@@ -42,8 +42,8 @@ tasks:
 
 
   - action: download_github
-    src: https://github.com/HypeLevels/simpledrift
-    ref: 53b72cf605bd0ef82d71906245c3af0918187d13
+    src: https://github.com/tabarra/simpledrift
+    ref: 2ed57c224ae70549fbcfccc957a00ff496b78c77
     dest: ./resources/simpledrift
 
   - action: download_github
