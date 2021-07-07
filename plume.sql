@@ -1247,7 +1247,6 @@ CREATE TABLE `users` (
   `dateofbirth` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sex` varchar(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `height` int(11) DEFAULT NULL,
-  `phone_number` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

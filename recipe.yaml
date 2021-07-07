@@ -37,7 +37,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx-legacy
-    ref: 290b25d72feb7a5fd5f3376d36b829702976af88
+    ref: 5a6984f0c92f21a68b278d0b629d97f3130d644b
     dest: ./resources/[legacy]
 
 
