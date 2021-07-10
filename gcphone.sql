@@ -11,18 +11,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
-ALTER TABLE `users` ADD COLUMN `phone_number` VARCHAR(10) NULL;
-
--- Export de la structure de la table gtarp. phone_app_chat
-CREATE TABLE IF NOT EXISTS `phone_app_chat` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `channel` varchar(20) NOT NULL,
-  `message` varchar(255) NOT NULL,
-  `time` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
-
 -- Les données exportées n'étaient pas sélectionnées.
 -- Export de la structure de la table gtarp. phone_calls
 CREATE TABLE IF NOT EXISTS `phone_calls` (
@@ -91,8 +79,6 @@ CREATE TABLE IF NOT EXISTS `twitter_likes` (
   CONSTRAINT `FK_twitter_likes_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`),
   CONSTRAINT `FK_twitter_likes_twitter_tweets` FOREIGN KEY (`tweetId`) REFERENCES `twitter_tweets` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
-INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES ('phone', 'Phone', 1, 0, 1);
 
 -- Les données exportées n'étaient pas sélectionnées.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
