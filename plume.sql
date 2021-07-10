@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2021 at 09:40 AM
+-- Generation Time: Jul 10, 2021 at 09:54 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tabarra_e60d6f`
+-- Database: `jjd`
 --
 
 -- --------------------------------------------------------
@@ -522,14 +522,15 @@ CREATE TABLE `users` (
   `height` int(11) DEFAULT NULL,
   `skin` longtext DEFAULT NULL,
   `status` longtext DEFAULT NULL,
-  `is_dead` tinyint(1) DEFAULT 0
+  `is_dead` tinyint(1) DEFAULT 0,
+  `phone_number` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`) VALUES
+INSERT INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`, `phone_number`) VALUES
 ('dd5a2e91e9aa1b6c4fc1f66e44f949954c733450', '{\"black_money\":0,\"bank\":50600,\"money\":0}', 'admin', '[]', 'unemployed', 0, '[]', '{\"heading\":183.7,\"x\":-264.4,\"y\":-964.3,\"z\":31.2}', 'Joe', 'Mama', '06/06/2000', 'm', 84, '{\"nose_5\":0,\"chin_3\":0,\"tshirt_2\":0,\"skin_md_weight\":50,\"hair_2\":0,\"beard_4\":0,\"bodyb_1\":-1,\"chest_1\":0,\"jaw_1\":0,\"lipstick_1\":0,\"nose_4\":0,\"chin_2\":0,\"eyebrows_6\":0,\"moles_2\":0,\"watches_1\":-1,\"eyebrows_1\":0,\"watches_2\":0,\"glasses_1\":0,\"blemishes_1\":0,\"beard_3\":0,\"bags_1\":0,\"complexion_2\":0,\"lipstick_2\":0,\"lipstick_4\":0,\"shoes_1\":0,\"moles_1\":0,\"blush_3\":0,\"bproof_1\":0,\"cheeks_2\":0,\"mom\":21,\"complexion_1\":0,\"pants_2\":0,\"bodyb_4\":0,\"eyebrows_2\":0,\"sex\":0,\"torso_1\":0,\"torso_2\":0,\"nose_3\":0,\"sun_2\":0,\"hair_1\":0,\"lipstick_3\":0,\"blush_2\":0,\"beard_1\":0,\"glasses_2\":0,\"mask_2\":0,\"bags_2\":0,\"blush_1\":0,\"hair_color_1\":0,\"chin_1\":0,\"jaw_2\":0,\"bproof_2\":0,\"chest_2\":0,\"ears_2\":0,\"helmet_2\":0,\"decals_2\":0,\"eyebrows_4\":0,\"makeup_2\":0,\"dad\":0,\"makeup_4\":0,\"eye_color\":0,\"nose_2\":0,\"mask_1\":0,\"decals_1\":0,\"cheeks_1\":0,\"chain_2\":0,\"face_md_weight\":50,\"bodyb_2\":0,\"neck_thickness\":0,\"hair_color_2\":0,\"arms_2\":0,\"nose_6\":0,\"helmet_1\":-1,\"makeup_1\":0,\"sun_1\":0,\"chest_3\":0,\"bracelets_1\":-1,\"bracelets_2\":0,\"arms\":0,\"nose_1\":0,\"chain_1\":0,\"bodyb_3\":-1,\"chin_4\":0,\"pants_1\":0,\"ears_1\":-1,\"eyebrows_3\":0,\"cheeks_3\":0,\"tshirt_1\":0,\"eyebrows_5\":0,\"beard_2\":0,\"makeup_3\":0,\"shoes_2\":0,\"eye_squint\":0,\"lip_thickness\":0,\"age_1\":0,\"age_2\":0,\"blemishes_2\":0}', '[{\"percent\":88.44999999999999,\"val\":884500,\"name\":\"hunger\"},{\"percent\":91.3375,\"val\":913375,\"name\":\"thirst\"}]', 0, '410-4992');
 
 -- --------------------------------------------------------
