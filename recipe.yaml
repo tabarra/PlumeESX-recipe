@@ -58,7 +58,7 @@ tasks:
     dest: ./resources/cron
 
   - action: download_github
-    src: https://github.com/esx-framework/instance
+    src: https://raw.githubusercontent.com/tabarra/PlumeESX-recipe/main/
     ref: 21cea1fee9f666ac3a30b9b03d6f8b5f21afb57d
     dest: ./resources/instance
 
