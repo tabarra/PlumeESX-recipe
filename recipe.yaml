@@ -10,7 +10,7 @@ tasks:
     src: https://github.com/citizenfx/cfx-server-data
     ref: 0169fdddaa9511558cfa17bcf80a832f56c359ff
     subpath: resources
-    dest: ./resources
+    dest: ./resources/[fivem]
   
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
@@ -29,6 +29,7 @@ tasks:
   - action: connect_database
   - action: query_database
     file: ./tmp/plume_esx/plume.sql
+
 
 
 
@@ -61,16 +62,32 @@ tasks:
     ref: c5fa317a65acfe2eef453257e19e3b4fde137089
     dest: ./resources/mysql-async
 
-  ## KL HUD v2
   - action: download_github
-    src: https://github.com/Kilichi/Kl_HudV2
-    ref: ac8a321ff335706509bdc6122a2984a80082e669
-    dest: ./resources/[hud]/Kl_HudV2
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: 7310453e8a66da9e00a539de271827640b5e735a
+    dest: ./resources/pma-voice
 
-  - action: replace_string
-    file: ./resources/[hud]/Kl_HudV2/client/client.lua
-    search: 'esx_status:onTick'
-    replace: 'Kl_Hud:onTick'
+  - action: download_github
+    src: https://github.com/AvarianKnight/rp-radio
+    ref: e9309f7f5ef52f9ad8482f5e55d10da56606a7c9
+    dest: ./resources/rp-rad/
+
+  - action: download_github
+    src: https://github.com/thelindat/linden_outlawalert
+    ref: a28b0ab65b1a4a9fed4063a26566cf697c263fc8
+    dest: ./resources/shotspotter
+
+  - action: download_github
+    src: https://github.com/thelindat/mdt
+    ref: 0c804de3cd497d70d8ae76bf1699d76d4c9d94fc
+    dest: ./resources/mdt
+
+  ## cosmo hud
+  - action: download_github
+    src: https://github.com/nojdh/cosmo_hud
+    ref: eed8fd7b8cbe8a02ae7339d4dee05b5d56a8097c
+    dest: ./resources/[tmp]/cosmo
+
 
   ## GCPhone stuff
   - action: download_file
@@ -85,10 +102,82 @@ tasks:
 
 
   ## Final touches
+
+  - action: ensure_dir
+    path: ./resources/[fivem]
+
+  - action: ensure_dir
+    path: ./resources/[tmp]
+
+  - action: move_path
+    src: ./resources/[tmp]/cosmo/cosmo_hud
+    dest: ./resources/[hud]/cosmo_hud
+
+  - action: move_path
+    src: ./resources/rp-rad/rp-radio
+    dest: ./resources/rp-radio
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_property/esx_property.sql
+    search: 'USE `es_extended`;'
+    replace: ''
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_property/esx_property.sql
+    search: 'Config.Default911 = false'
+    replace: 'Config.Default911 = true'
+
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_property/offices.sql
+    search: 'USE `es_extended`;'
+    replace: ''
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx]/es_extended/config.lua
+    search: 'Config.Multichar                = false'
+    replace: 'Config.Multichar = true '
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_multicharacter/server/main.lua
+    search: "Config.Database = 'es_extended'"
+    replace: "Config.Database = '{{dbName}}'"
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_status/config.lua
+    search: "    Config.Display        = true"
+    replace: "    Config.Display        = false"
+
+  - action: replace_string
+    file: ./resources/rp-radio/config.lua
+    search: 'Name = "INPUT_REPLAY_START_STOP_RECORDING_SECONDARY", -- Control name"'
+    replace: 'Name = "INPUT_SELECT_CHARACTER_MICHAEL", -- Control name"'
+
+  - action: replace_string
+    file: ./resources/rp-radio/config.lua
+    search: 'Key = 289, -- F2'
+    replace: 'Key = 166, -- F5'
+
+  - action: replace_string
+    file: ./resources/[hud]/cosmo_hud/config.lua
+    search: 'Config.AlwaysShowRadar = false'
+    replace: 'Config.AlwaysShowRadar = true'
+
+  - action: replace_string
+    file: ./resources/[hud]/cosmo_hud/config.lua
+    search: 'Config.UnitOfSpeed = "kmh"'
+    replace: 'Config.UnitOfSpeed = "mph"'
+
+  - action: replace_string
+    mode: all_vars
+    file: ./resources/[legacy]/[esx_addons]/esx_multicharacter/server/main.lua
+    
+
   - action: replace_string
     mode: all_vars
     file: ./resources/loadingscreen/config.js
     
+
   - action: remove_path
     path: ./tmp
 
@@ -97,5 +186,41 @@ tasks:
 
   - action: remove_path
     path: ./resources/server.cfg
+
+  - action: remove_path
+    path: ./resources/rp-rad
+
+
+
+
+  - action: remove_path
+    path: ./tmp
+
+  - action: remove_path
+    path: ./resources/[fivem]/[test]
+
+  - action: remove_path
+    path: ./resources/[fivem]/[local]
+
+  - action: remove_path
+    path: ./resources/[fivem]/[gameplay]/chat-theme-gtao
+
+
+  - action: remove_path
+    path: ./resources/[fivem]/[gameplay]/[examples]
+
+
+  - action: remove_path
+    path: ./resources/[fivem]/[system]/sessionmanager-rdr3
+
+  - action: remove_path
+    path: ./resources/[fivem]/[system]/runcode
+
+
+  - action: remove_path
+    path: ./resources/[fivem]/[system]/rconlog
+
+  - action: remove_path
+    path: ./resources/[fivem]/[gamemodes]/[maps]
 
 
