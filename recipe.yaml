@@ -1,4 +1,5 @@
 $engine: 3
+$onesync: legacy
 name: PlumeESXLegacy
 version: 3.0.0
 author: Tabarra, Hamy & Chip
@@ -37,7 +38,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx-legacy
-    ref: f9d54dfd8f82582cd4a87a41350d6622bdc5a21b
+    ref: cae7d8e7fddf02658dcbe858d61b5eb8cfcffca8
     dest: ./resources/[legacy]
 
 
@@ -48,7 +49,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/Bob74/bob74_ipl
-    ref: 1f4cec0b41f90762994191d06ad6eb9c038e9ff5
+    ref: e949c08c67bdfe3fb981bf4f77477faf26d187e6
     dest: ./resources/bob74_ipl
   
 
@@ -70,7 +71,7 @@ tasks:
   - action: download_github
     src: https://github.com/AvarianKnight/rp-radio
     ref: e9309f7f5ef52f9ad8482f5e55d10da56606a7c9
-    dest: ./resources/rp-rad/
+    dest: ./tmp/rp-radio
 
   - action: download_github
     src: https://github.com/thelindat/linden_outlawalert
@@ -86,8 +87,46 @@ tasks:
   - action: download_github
     src: https://github.com/nojdh/cosmo_hud
     ref: eed8fd7b8cbe8a02ae7339d4dee05b5d56a8097c
-    dest: ./resources/[tmp]/cosmo
+    dest: ./tmp/cosmo
 
+
+  - action: move_path
+    src: ./tmp/cosmo/cosmo_hud
+    dest: ./resources/[hud]/cosmo_hud
+
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_property/esx_property.sql
+    search: 'Config.Default911 = false'
+    replace: 'Config.Default911 = true'
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_status/config.lua
+    search: "    Config.Display        = true"
+    replace: "    Config.Display        = false"
+
+
+  - action: replace_string
+    file: ./resources/[hud]/cosmo_hud/config.lua
+    search: 'Config.AlwaysShowRadar = false'
+    replace: 'Config.AlwaysShowRadar = true'
+
+  - action: replace_string
+    file: ./resources/[hud]/cosmo_hud/config.lua
+    search: 'Config.UnitOfSpeed = "kmh"'
+    replace: 'Config.UnitOfSpeed = "mph"'
+
+  ## multicharacter 
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx]/es_extended/config.lua
+    search: 'Config.Multichar                = false'
+    replace: 'Config.Multichar = true '
+
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_multicharacter/server/main.lua
+    search: "Config.Database = 'es_extended'"
+    replace: "Config.Database = '{{dbName}}'"
 
   ## GCPhone stuff
   - action: download_file
@@ -101,72 +140,41 @@ tasks:
     dest: ./resources/gcphone
 
 
-  ## Final touches
+  ## make directories
 
   - action: ensure_dir
     path: ./resources/[fivem]
 
-  - action: ensure_dir
-    path: ./resources/[tmp]
+  ## move directories
 
   - action: move_path
-    src: ./resources/[tmp]/cosmo/cosmo_hud
-    dest: ./resources/[hud]/cosmo_hud
-
-  - action: move_path
-    src: ./resources/rp-rad/rp-radio
+    src: ./tmp/rp-radio/rp-radio
     dest: ./resources/rp-radio
 
+  ## sql file tweaks
   - action: replace_string
     file: ./resources/[legacy]/[esx_addons]/esx_property/esx_property.sql
     search: 'USE `es_extended`;'
     replace: ''
-
-  - action: replace_string
-    file: ./resources/[legacy]/[esx_addons]/esx_property/esx_property.sql
-    search: 'Config.Default911 = false'
-    replace: 'Config.Default911 = true'
-
 
   - action: replace_string
     file: ./resources/[legacy]/[esx_addons]/esx_property/offices.sql
     search: 'USE `es_extended`;'
     replace: ''
 
-  - action: replace_string
-    file: ./resources/[legacy]/[esx]/es_extended/config.lua
-    search: 'Config.Multichar                = false'
-    replace: 'Config.Multichar = true '
-
-  - action: replace_string
-    file: ./resources/[legacy]/[esx_addons]/esx_multicharacter/server/main.lua
-    search: "Config.Database = 'es_extended'"
-    replace: "Config.Database = '{{dbName}}'"
-
-  - action: replace_string
-    file: ./resources/[legacy]/[esx_addons]/esx_status/config.lua
-    search: "    Config.Display        = true"
-    replace: "    Config.Display        = false"
-
+    ## rp radio config
   - action: replace_string
     file: ./resources/rp-radio/config.lua
-    search: 'Name = "INPUT_REPLAY_START_STOP_RECORDING_SECONDARY", -- Control name"'
-    replace: 'Name = "INPUT_SELECT_CHARACTER_MICHAEL", -- Control name"'
+    search: |
+      Name = "INPUT_REPLAY_START_STOP_RECORDING_SECONDARY", -- Control name"
+    replace: | 
+      Name = "INPUT_SELECT_CHARACTER_MICHAEL", -- Control name"
 
   - action: replace_string
     file: ./resources/rp-radio/config.lua
     search: 'Key = 289, -- F2'
     replace: 'Key = 166, -- F5'
 
-  - action: replace_string
-    file: ./resources/[hud]/cosmo_hud/config.lua
-    search: 'Config.AlwaysShowRadar = false'
-    replace: 'Config.AlwaysShowRadar = true'
-
-  - action: replace_string
-    file: ./resources/[hud]/cosmo_hud/config.lua
-    search: 'Config.UnitOfSpeed = "kmh"'
-    replace: 'Config.UnitOfSpeed = "mph"'
 
   - action: replace_string
     mode: all_vars
@@ -186,12 +194,6 @@ tasks:
 
   - action: remove_path
     path: ./resources/server.cfg
-
-  - action: remove_path
-    path: ./resources/rp-rad
-
-
-
 
   - action: remove_path
     path: ./tmp
@@ -222,5 +224,4 @@ tasks:
 
   - action: remove_path
     path: ./resources/[fivem]/[gamemodes]/[maps]
-
 
