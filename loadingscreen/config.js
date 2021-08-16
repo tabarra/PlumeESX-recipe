@@ -9,11 +9,11 @@ const config = {
         {key:'SHIFT', desc: 'Drift'},
     ],
     features: [
-        "Extendable",
+        "Modern Hud",
         "13 jobs",
-        "Vehicle / Weapon / Clothe / Barber shops",
+        "Vehicle / Weapon / Clothing / Barber shops",
         "ESX Drugs / HoldUp",
         "GCPhone",
-        "EasyAdmin",
+        "MultiCharacter support",
     ],
 }
