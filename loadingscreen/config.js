@@ -10,7 +10,7 @@ const config = {
     ],
     features: [
         "Modern Hud",
-        "13 jobs",
+        "EasyAdmin",
         "Vehicle / Weapon / Clothing / Barber shops",
         "ESX Drugs / HoldUp",
         "GCPhone",

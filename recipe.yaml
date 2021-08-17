@@ -79,6 +79,11 @@ tasks:
     dest: ./resources/shotspotter
 
   - action: download_github
+    src: https://github.com/Blumlaut/EasyAdmin
+    ref: 50f8d23c6c7c20a420548728d962b741b2abc653
+    dest: ./resources/EasyAdmin
+
+  - action: download_github
     src: https://github.com/thelindat/mdt
     ref: 0c804de3cd497d70d8ae76bf1699d76d4c9d94fc
     dest: ./resources/mdt
