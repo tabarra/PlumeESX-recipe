@@ -442,14 +442,7 @@ CREATE TABLE `phone_messages` (
   `owner` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `phone_messages`
---
 
-INSERT INTO `phone_messages` (`id`, `transmitter`, `receiver`, `message`, `time`, `isRead`, `owner`) VALUES
-(106, 'police', '958-2806', 'hi', '2021-08-14 20:37:51', 1, 1);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `phone_users_contacts`
