@@ -58,11 +58,6 @@ tasks:
     dest: ./resources/cron
 
   - action: download_github
-    src: https://github.com/esx-framework/instance
-    ref: 21cea1fee9f666ac3a30b9b03d6f8b5f21afb57d
-    dest: ./resources/instance
-
-  - action: download_github
     src: https://github.com/esx-framework/skinchanger
     ref: d716177f226ad696d903a27d7afa3ca97ce80a3b
     dest: ./resources/skinchanger
