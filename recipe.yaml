@@ -92,8 +92,8 @@ tasks:
 
   - action: replace_string
     file: ./resources/[legacy]/[esx_addons]/esx_status/config.lua
-    search: "    Config.Display        = true"
-    replace: "    Config.Display        = false"
+    search: "Config.Display        = true"
+    replace: "Config.Display        = false"
 
   - action: replace_string
     file: ./resources/[hud]/cosmo_hud/config.lua
