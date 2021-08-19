@@ -20,12 +20,11 @@ Please check the [**Recipe Documentation Page**](https://github.com/tabarra/txAd
 - Update loading screen
 - Optimised file structure
 - Minimised server.cfg
-- Added RP-Radio
 - Added modern hud
-- Added mdt
+- Added MDT (police Mobile Data Terminal)
 - Added shotspotter
-- Added pma voice
-- Added a hello message to the console for new users
+- Added pma-voice
+- Added RP-Radio
 
 ### v2.1.0
 - Removed `cd_easytime`;
