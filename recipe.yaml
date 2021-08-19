@@ -1,7 +1,7 @@
 $engine: 3
 $onesync: legacy
 name: PlumeESXLegacy
-version: 3.0.0
+version: 3.1.0
 author: Tabarra & SaltySea
 description: A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. 
 
@@ -113,6 +113,12 @@ tasks:
     replace: 'Config.AlwaysShowRadar = true'
 
 
+  ## Patching configs: esx_basicneeds
+  - action: replace_string
+    file: ./resources/[legacy]/[esx_addons]/esx_basicneeds/config.lua
+    search: 'Config.Visible = true'
+    replace: 'Config.Visible = false'
+
   ## Patching configs: multicharacter 
   - action: replace_string
     file: ./resources/[legacy]/[esx]/es_extended/config.lua
@@ -125,7 +131,7 @@ tasks:
     replace: "Config.Database = '{{dbName}}'"
 
 
-  ## Patching configs: rp radio
+  ## Patching configs: rp-radio
   - action: replace_string
     file: ./resources/rp-radio/config.lua
     search: |

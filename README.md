@@ -16,7 +16,7 @@ Please check the [**Recipe Documentation Page**](https://github.com/tabarra/txAd
 ### v3.0.0
 - Updated recipe to work with NEW ESX Legacy
 - Added new multicharacter system
-- Updated IPLS
+- Updated IPLs
 - Update loading screen
 - Optimised file structure
 - Minimised server.cfg
