@@ -7,13 +7,14 @@
 This recipe runs inside [**txAdmin**](https://github.com/tabarra/txAdmin).  
 Please check the [**Recipe Documentation Page**](https://github.com/tabarra/txAdmin/blob/master/docs/recipe.md).
 
-## Feel free to checkout the [todo](./todo.md)
+## TODO:
+- [ ] add linden inventory
+- [ ] Maybe add this: https://github.com/czsquizer/sqz_carmenu
 
 ## Changelog
 
 ### v3.0.0
-
-- Remade recipe to work with NEW ESX Legacy
+- Updated recipe to work with NEW ESX Legacy
 - Added new multicharacter system
 - Updated IPLS
 - Update loading screen
@@ -27,7 +28,6 @@ Please check the [**Recipe Documentation Page**](https://github.com/tabarra/txAd
 - Added a hello message to the console for new users
 
 ### v2.1.0
-
 - Removed `cd_easytime`;
 - Fixed spawnpoint being inside the job listing marker;
 - Fixed vehicle ownership issues (solves cars not saving in garage);
