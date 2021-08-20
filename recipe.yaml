@@ -98,7 +98,7 @@ tasks:
     dest: ./resources/[hud]/cosmo_hud
 
   - action: replace_string
-    file: ./resources/[legacy]/[esx_addons]/esx_property/esx_property.sql
+    file: ./resources/shotspotter/config.lua
     search: 'Config.Default911 = false'
     replace: 'Config.Default911 = true'
 
@@ -111,7 +111,6 @@ tasks:
     file: ./resources/[hud]/cosmo_hud/config.lua
     search: 'Config.AlwaysShowRadar = false'
     replace: 'Config.AlwaysShowRadar = true'
-
 
   ## Patching configs: esx_basicneeds
   - action: replace_string
