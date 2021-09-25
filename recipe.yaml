@@ -54,7 +54,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
-    ref: ad8d632f4cbcdc78ac85b8052d45a66b340a7517
+    ref: 4754a4dfff1e897f14df6d7d0e06c7fbfbaa20d5
     dest: ./resources/pma-voice
 
   - action: download_github
@@ -69,7 +69,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/Blumlaut/EasyAdmin
-    ref: 56826467ac5f2ce1dea8053923b569f644f74c3b
+    ref: 776ac8f3898182e5c075d533bbd89e92efa017e9
     dest: ./resources/EasyAdmin
 
   - action: download_github
