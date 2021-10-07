@@ -34,7 +34,7 @@ tasks:
   # Download basic resources and ESX dependencies
   - action: download_github
     src: https://github.com/esx-framework/esx-legacy
-    ref: cae7d8e7fddf02658dcbe858d61b5eb8cfcffca8
+    ref: 8153f6a9221baeef0affb0176e5811007b8f5e3b
     dest: ./resources/[legacy]
 
   - action: download_github
