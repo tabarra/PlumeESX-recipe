@@ -77,6 +77,14 @@ tasks:
     ref: 0c804de3cd497d70d8ae76bf1699d76d4c9d94fc
     dest: ./resources/mdt
 
+  - action: download_github
+    src: https://github.com/DevTestingPizza/vSync
+    ref: 65f0e3cdd5692b619985a7df6297ffca7db41525
+    dest: ./tmp/vSync
+
+  - action: move_path
+    src: ./tmp/vSync/vSync
+    dest: ./resources/vSync
 
   ## GCPhone stuff
   - action: download_file
@@ -88,6 +96,17 @@ tasks:
   - action: move_path
     src: ./tmp/resources-1.2/gcphone
     dest: ./resources/gcphone
+
+  ## vstancer stuff
+  - action: download_file
+    url: https://github.com/carmineos/fivem-vstancer/releases/download/v1.4/vstancer-v1.4.0.zip
+    path: ./tmp/vstancer.zip
+  - action: unzip
+    src: ./tmp/vstancer.zip
+    dest: ./tmp
+  - action: move_path
+    src: ./tmp/vstancer
+    dest: ./resources/vstancer
 
 
   ## Downloading & Patching configs: cosmo hud
