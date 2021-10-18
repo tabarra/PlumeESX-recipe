@@ -1,7 +1,7 @@
 $engine: 3
 $onesync: legacy
 name: PlumeESXLegacy
-version: 3.1.0
+version: 3.2.0
 author: Tabarra & SaltySea
 description: A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. 
 
@@ -34,7 +34,7 @@ tasks:
   # Download basic resources and ESX dependencies
   - action: download_github
     src: https://github.com/esx-framework/esx-legacy
-    ref: cae7d8e7fddf02658dcbe858d61b5eb8cfcffca8
+    ref: 8153f6a9221baeef0affb0176e5811007b8f5e3b
     dest: ./resources/[legacy]
 
   - action: download_github
@@ -54,7 +54,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
-    ref: 56e7cc59110342bf58935b5c76e6eb1c8cc110c0
+    ref: 4754a4dfff1e897f14df6d7d0e06c7fbfbaa20d5
     dest: ./resources/pma-voice
 
   - action: download_github
@@ -69,7 +69,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/Blumlaut/EasyAdmin
-    ref: 51130e9c9057b4088a323f6123900bf28aa98c8a
+    ref: 776ac8f3898182e5c075d533bbd89e92efa017e9
     dest: ./resources/EasyAdmin
 
   - action: download_github
@@ -77,6 +77,14 @@ tasks:
     ref: 0c804de3cd497d70d8ae76bf1699d76d4c9d94fc
     dest: ./resources/mdt
 
+  - action: download_github
+    src: https://github.com/DevTestingPizza/vSync
+    ref: 65f0e3cdd5692b619985a7df6297ffca7db41525
+    dest: ./tmp/vSync
+
+  - action: move_path
+    src: ./tmp/vSync/vSync
+    dest: ./resources/vSync
 
   ## GCPhone stuff
   - action: download_file
@@ -88,6 +96,17 @@ tasks:
   - action: move_path
     src: ./tmp/resources-1.2/gcphone
     dest: ./resources/gcphone
+
+  ## vstancer stuff
+  - action: download_file
+    url: https://github.com/carmineos/fivem-vstancer/releases/download/v1.4/vstancer-v1.4.0.zip
+    path: ./tmp/vstancer.zip
+  - action: unzip
+    src: ./tmp/vstancer.zip
+    dest: ./tmp
+  - action: move_path
+    src: ./tmp/vstancer
+    dest: ./resources/vstancer
 
 
   ## Downloading & Patching configs: cosmo hud
