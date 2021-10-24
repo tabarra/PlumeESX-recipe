@@ -9,7 +9,7 @@ tasks:
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
-    ref: b907aa74e2826e363979332ac21b9ad98cd82aa1
+    ref: master
     subpath: resources
     dest: ./resources/[cfx-default]
   
@@ -176,22 +176,6 @@ tasks:
     path: ./resources/esx_example
   - action: remove_path
     path: ./resources/server.cfg
-  - action: remove_path
-    path: ./resources/[cfx-default]/[test]
-  - action: remove_path
-    path: ./resources/[cfx-default]/[local]
-  - action: remove_path
-    path: ./resources/[cfx-default]/[gameplay]/chat-theme-gtao
-  - action: remove_path
-    path: ./resources/[cfx-default]/[gameplay]/[examples]
-  - action: remove_path
-    path: ./resources/[cfx-default]/[system]/sessionmanager-rdr3
-  - action: remove_path
-    path: ./resources/[cfx-default]/[system]/runcode
-  - action: remove_path
-    path: ./resources/[cfx-default]/[system]/rconlog
-  - action: remove_path
-    path: ./resources/[cfx-default]/[gamemodes]/[maps]
   - action: remove_path
     path: ./resources/[legacy]/esx_example
   - action: remove_path
