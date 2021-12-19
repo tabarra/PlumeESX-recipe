@@ -1,4 +1,6 @@
-# PlumeESX-recipe
+# PlumeESX-recipe (retired)  
+  
+> **NOTE: Due to ESX itself being unmaintained, we are archiving PlumeESX. We recommend using the QBCore Recipe.**
 
 [![Plume ESX Video Tutorial](https://i.imgur.com/jjUbS1Z.png)](https://www.youtube.com/watch?v=iGfwUCO0RZQ)
 
